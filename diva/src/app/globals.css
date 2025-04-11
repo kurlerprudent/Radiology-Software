@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -112,14 +116,7 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+
 
 [data-radix-scroll-area-viewport] {
   scrollbar-width: none;
@@ -176,4 +173,59 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary));
+}
+
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* Very light blue/gray */
+    --foreground: 215 25% 27%; /* Dark grayish blue */
+
+    --card: 210 40% 100%; /* White */
+    --card-foreground: 215 25% 27%; /* Dark grayish blue */
+
+    --popover: 210 40% 100%; /* White */
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 217 91% 60%; /* Your main medical blue */
+    --primary-foreground: 210 40% 98%; /* Light text on primary blue */
+
+    --secondary: 210 40% 96%; /* Lighter blue/gray */
+    --secondary-foreground: 215 25% 35%; /* Slightly lighter dark blue */
+
+    --muted: 210 40% 94%; /* Muted blue/gray */
+    --muted-foreground: 215 20% 55%; /* Grayish blue text */
+
+    --accent: 210 40% 90%; /* Accent blue/gray */
+    --accent-foreground: 215 30% 40%; /* Darker accent text */
+
+    --destructive: 0 84% 60%; /* Keep red for destructive actions */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 32% 91%; /* Light blue/gray border */
+    --input: 214 32% 91%; /* Light blue/gray input border */
+    --ring: 217 91% 70%; /* Slightly lighter primary blue for focus rings */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Define dark theme variables here if needed, perhaps using darker blues */
+    /* Example: */
+    --background: 215 30% 15%;
+    --foreground: 210 40% 95%;
+    --card: 215 30% 20%;
+    --card-foreground: 210 40% 95%;
+    /* ... and so on */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }

@@ -31,8 +31,8 @@ export default function DashboardChart() {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Bar dataKey="reports" fill="#4F46E5" />
-        <Bar dataKey="appointments" fill="#10B981" />
+        <Bar dataKey="reports" fill="lightblue" />
+        <Bar dataKey="appointments" fill="steelblue" />
       </BarChart>
     </ResponsiveContainer>
   );
