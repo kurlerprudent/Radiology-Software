@@ -42,7 +42,7 @@ const data = {
     },
     {
       title:"Settings",
-      url:"dasboard/patient-settings",
+      url:"/dashboard/patient-settings",
       icon:Settings
     },
     {
